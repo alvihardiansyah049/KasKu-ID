@@ -1,0 +1,13 @@
+@import "tailwindcss";
+:root{--bg:#F5F3FF;--tx:#211B3D;--mu:#6b6590;--g:rgba(255,255,255,.55);--gb:rgba(255,255,255,.8);--sh:rgba(139,114,248,.18);--a1:rgba(167,139,250,.55);--a2:rgba(196,181,253,.7);--a3:rgba(52,211,153,.25);--inp:rgba(255,255,255,.7);color-scheme:light}
+[data-theme="dark"]{--bg:#17152A;--tx:#F3F0FF;--mu:#a9a3cc;--g:rgba(255,255,255,.14);--gb:rgba(255,255,255,.32);--sh:rgba(0,0,0,.45);--a1:rgba(139,114,248,.45);--a2:rgba(99,60,200,.4);--a3:rgba(52,211,153,.14);--inp:rgba(255,255,255,.1);color-scheme:dark}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--tx);background:var(--bg);overflow-x:hidden;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 10% 0,var(--a1),transparent 70%),radial-gradient(700px 500px at 95% 20%,var(--a2),transparent 70%),radial-gradient(500px 400px at 40% 100%,var(--a3),transparent 70%)}
+.glass{position:relative;background:var(--g);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);border:1px solid var(--gb);border-radius:22px;box-shadow:0 12px 40px var(--sh),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -8px 20px rgba(255,255,255,.05);transition:transform .25s,box-shadow .25s}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.28),transparent 40%)}
+.nav-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;color:var(--mu);font-weight:600;font-size:14px;transition:.25s}
+.nav-link:hover{background:var(--inp)}
+.nav-link.active{color:#fff;background:linear-gradient(135deg,#8B72F8,#A78BFA);box-shadow:0 8px 20px rgba(139,114,248,.45)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:14px;border:1px solid var(--gb);background:var(--inp);font-weight:600;font-size:13px;cursor:pointer;transition:.25s}
+.btn-primary{background:linear-gradient(135deg,#8B72F8,#A78BFA);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(139,114,248,.4)}
+.bar{height:9px;border-radius:9px;background:var(--inp);overflow:hidden}.bar>i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#8B72F8,#C4B5FD);transition:width .5s}
